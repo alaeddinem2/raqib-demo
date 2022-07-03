@@ -1,0 +1,74 @@
+{% extends 'demo/base_template.html' %}
+{% block page_title %}
+Add Vehicle
+{% endblock page_title %}
+
+
+
+{% block main_content %}
+     <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add Vehicle</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="/demo/add_vehicle_save" method="POST">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label >Vehicle Plate Number</label>
+                    <input type="text" class="form-control"  placeholder="Enter Plate Number" name="plate_number">
+                  </div>
+                  
+                   <div class="form-group">
+                    <label >Vehicle Name</label>
+                    <input type="text" class="form-control"  placeholder="Vehicle Name" name="name">
+                  </div>
+                  <div class="form-group">
+                    <label >Vehicle Year</label>
+                    <input type="text" class="form-control"  placeholder="Year" name="year">
+                  </div>
+                  <div class="form-group">
+                    <label >Driver Name</label>
+                    <select  class="form-control"   name="driver">
+                      {% for driver in drivers %}
+                      <option value="{{ driver.id }}">{{ driver.name }}</option>
+                      {% endfor %}
+                  </select>
+                  </div>
+                  
+                      <div class="form-group">
+                        {% if messages %}
+
+                        {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                       <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                         {% endif %}
+                          {% if message.tags == 'success' %}
+                       <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                         {% endif %}
+                         {% endfor %}
+
+                     {% endif %}
+                         </div>
+
+                   </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Add Vehicle</button>
+                </div>
+              </form>
+            </div>
+
+              </div>
+          </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endblock main_content %}
+

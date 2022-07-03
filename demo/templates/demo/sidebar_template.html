@@ -1,0 +1,90 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="{% static 'assets/images/logo/logo-white.svg ' %} " alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+           <span class="brand-text font-weight-light"><span class="brand-text font-weight-light">RAQIB</span></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{user.username}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a href="/demo/add_vehicle" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Add Vehicle
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/demo/manage_vehicle" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Manage Vehicles
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/demo/add_driver" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Add Driver
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/demo/vehicle_details" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Vehicles Logs
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/demo/manage_drivers" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Manage Drivers
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="/manage_subject" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                History
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          
+          </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

@@ -1,0 +1,79 @@
+{% extends 'demo/base_template.html' %}
+{% block page_title %}
+Dashboard
+{% endblock page_title %}
+
+
+
+{% block main_content %}
+     <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-solid fa-car"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Vehicles</span>
+                <span class="info-box-number">{{vehicles}}</span>   
+                
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Drivers</span>
+                <span class="info-box-number">{{drivers}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="ion ion-stats-bars"></i></span>
+              
+              <div class="info-box-content">
+                
+                <span class="info-box-text">In</span>
+               
+                
+                <span class="info-box-number">{{ log.in }}</span>
+                
+                
+                
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="ion ion-stats-bars"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Out</span>
+                <span class="info-box-number">{{log.out}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endblock main_content %}

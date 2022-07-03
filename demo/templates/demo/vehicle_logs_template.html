@@ -1,0 +1,62 @@
+{% extends 'demo/base_template.html' %}
+{% block page_title %}
+Vehicle Logs
+{% endblock page_title %}
+
+
+
+{% block main_content %}
+     <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            
+              <!-- /.card-header -->
+              <!-- form start -->
+              <div class="card">
+                <div class="card-header  " style="display: flex; justify-content: center;">
+                  <h3 class="card-title ">{{vehicle.name}} , Plate Number : {{vehicle.plateNumber}}, Driver :  {{vehicle.driver}} , Year : {{vehicle.year}} </h3>
+                  
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>In/Out</th>
+                        <th>Time</th>
+                        
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for log in logs %}
+                      <tr>
+                        <td>{{log.id}}</td>
+                        {% if log.in_out == True %}
+                        <td>In</td>
+                        {% else %}
+                        <td>Out</td>
+                        {% endif %}
+                        <td>{{log.time}}</td>
+
+                        
+                        
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+            </div>
+
+              </div>
+          </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endblock main_content %}
+
